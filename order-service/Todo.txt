@@ -1,0 +1,12 @@
+
+1. Basic Setup
+
+2. Create a Bean Using @Configuration and @Bean
+
+3. Understand @SpringBootApplication - @SpringConfiguration
+
+3. Understand @SpringBootApplication - @ComponentScan
+
+4. Understanding Singleton and Prototype - @Scope()
+
+5. Understanding Eager and Lazy Loading => @Lazy
