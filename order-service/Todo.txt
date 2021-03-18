@@ -10,3 +10,5 @@
 4. Understanding Singleton and Prototype - @Scope()
 
 5. Understanding Eager and Lazy Loading => @Lazy
+
+6. Understanind DI of collobrating Object

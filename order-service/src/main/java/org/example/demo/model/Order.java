@@ -1,7 +1,12 @@
 package org.example.demo.model;
 
+import java.time.LocalDate;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import com.example.demo.model.Item;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -21,5 +26,10 @@ public class Order {
 
 	
 	private int orderId;
+	String status;
+	LocalDate orderDate;
+	Item item;
+
+	
 	
 }

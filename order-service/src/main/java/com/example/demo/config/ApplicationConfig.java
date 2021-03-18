@@ -1,5 +1,8 @@
 package com.example.demo.config;
 
+import java.time.LocalDate;
+
+import org.example.demo.model.Order;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -30,7 +33,6 @@ public class ApplicationConfig {
 	// Can make lazy creation by adding annotation @Lazy
 	
 	@Bean
-	@Lazy
 	public Item tv() {
 		
 		System.out.println("Bean with Id TV Initialized");
@@ -38,4 +40,10 @@ public class ApplicationConfig {
 		return new Item(101,"Led Tv",2,45000.00);
 	}
 
+	// Reference of One Bean is passed to another Bean  - using the Bean Id or methodName
+	@Bean
+	public Order ramOrder() {
+		
+		return new Order(200, "pending", LocalDate.of(2021, 3, 12), tv());
+	}
 }
