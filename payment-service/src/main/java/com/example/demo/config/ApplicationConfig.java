@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 
 import com.example.demo.ConditionForCustomerCreation;
 import com.example.demo.model.Customer;
@@ -26,8 +27,10 @@ public class ApplicationConfig {
 	     //solution-1 for case-3  use @Qualifier with id 
 	    // Solution-2  for case-3  add @Primary to one of the Factory Method with @Bean
 	@Bean
+	@Profile(value = "test")
 	public Customer ram() {
 		
+		System.out.println("Running in test profile");
 		return new Customer(101,"Ramesh","ram@abc.com");
 	}
 	
@@ -57,11 +60,13 @@ public class ApplicationConfig {
 		return new Customer(104,"patil","patil@abc.com");
 	}
 	
-//	@Bean
-//	public Customer gaurav() {
-//		
-//		return new Customer(105,"Gaurav","gaurav@abc.com");
-//	}
+	@Bean
+	@Profile(value = "prod")
+	public Customer gaurav() {
+		
+		System.out.println("Running in PROD profile");
+		return new Customer(105,"Gaurav","gaurav@abc.com");
+	}
 	
 	
 }

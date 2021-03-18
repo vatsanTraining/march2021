@@ -5,6 +5,7 @@ import javax.annotation.PreDestroy;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.event.ApplicationContextEvent;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
@@ -21,6 +22,8 @@ import lombok.experimental.FieldDefaults;
 @Component
 public class Payment {
 
+	
+	
 	int txnId;
 	double amount;
 	
