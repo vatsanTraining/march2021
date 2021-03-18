@@ -54,7 +54,7 @@ public class Payment {
 	}
 	
 	@PreDestroy
-	public void destory() {
+	public void destroy() {
 		
 		System.out.println("Destory Life cycle called");
 	}

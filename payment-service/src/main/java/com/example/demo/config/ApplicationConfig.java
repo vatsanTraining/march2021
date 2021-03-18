@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Profile;
 
 import com.example.demo.ConditionForCustomerCreation;
 import com.example.demo.model.Customer;
+import com.example.demo.model.Item;
 
 @Configuration
 public class ApplicationConfig {
@@ -69,4 +70,9 @@ public class ApplicationConfig {
 	}
 	
 	
+	@Bean
+	public Item kettle() {
+		
+		return new Item(900, "Kettle", 20, 240);
+	}
 }

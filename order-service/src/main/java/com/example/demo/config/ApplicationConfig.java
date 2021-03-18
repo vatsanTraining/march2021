@@ -48,7 +48,7 @@ public class ApplicationConfig {
 	}
 	
 	
-	@Bean
+	@Bean(initMethod = "",destroyMethod = "")
 	public Order ramOrder1() {
 		return new Order(200, "pending", LocalDate.of(2021, 3, 12), tv());
 	}
