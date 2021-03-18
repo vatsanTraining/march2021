@@ -1,23 +1,25 @@
 package com.example.demo.model;
 
+import java.time.LocalDate;
+
+import org.example.demo.model.Order;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
-
+import java.util.*;
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Item {
+
+@Component
+public class OrderBook {
 
 	
-	long id;
-	String name;
-	int quantity;
-	double price;
-
+	@Autowired
+	List<Order> orderList;
+	
 }

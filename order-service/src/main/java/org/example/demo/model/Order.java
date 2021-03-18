@@ -21,7 +21,6 @@ import lombok.experimental.FieldDefaults;
 
 // Java Class with @Component will be registered as a Bean
 
-@Component
 public class Order {
 
 	
@@ -30,6 +29,8 @@ public class Order {
 	LocalDate orderDate;
 	Item item;
 
+	
+	
 	
 	public Order(int orderId, String status, LocalDate orderDate, Item item) {
 		super();
@@ -43,5 +44,11 @@ public class Order {
 	@Autowired
 	Customer customer;
 	
+	
+//	@Autowired
+//	public void setCustomer(Customer cust) {
+//		
+//		this.customer = cust;
+//	}
 	
 }

@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 import com.example.demo.model.Item;
+import com.example.demo.model.OrderBook;
 
 @SpringBootApplication
 @ComponentScan(basePackages = "com.example.demo,org.example.demo.model")
@@ -43,6 +44,14 @@ Order order2 = ctx.getBean("ramOrder2",Order.class);
 		  
 		  System.out.println(order2);
 		  
+		  
+	OrderBook book = ctx.getBean(OrderBook.class);
+	
+	System.out.println("======= Order Book ============");
+	  
+	 book.getOrderList().forEach(System.out::println);
+	 
+	 
 		  
 		  ctx.close();
 	
