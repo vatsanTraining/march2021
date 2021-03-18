@@ -11,4 +11,23 @@
 
 5. Understanding Eager and Lazy Loading => @Lazy
 
-6. Understanind DI of collobrating Object
+6. Understanding DI of collaborating Object
+
+7. Using AutoWired
+
+8. Using Collection Injection with @AutoWired
+
+9. Setter Injection
+
+10. Constructor Injection
+
+=========================
+
+1. @AutoWired and @Qualifier
+2. Condition = @Conditional , @ConditionalProperty
+3. @Primary
+4. Life Cycle Methods
+5. working of autoconfigure-debug
+
+
+
