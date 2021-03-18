@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 
+import com.example.demo.model.Customer;
 import com.example.demo.model.Item;
 
 // This class replaces the xml file used in earlier versions of spring
@@ -42,8 +43,19 @@ public class ApplicationConfig {
 
 	// Reference of One Bean is passed to another Bean  - using the Bean Id or methodName
 	@Bean
-	public Order ramOrder() {
-		
+	public Order ramOrder2(Item tv) {
+		return new Order(202, "transit", LocalDate.of(2021, 3, 12), tv);
+	}
+	
+	
+	@Bean
+	public Order ramOrder1() {
 		return new Order(200, "pending", LocalDate.of(2021, 3, 12), tv());
+	}
+	
+	@Bean
+	public Customer ramesh() {
+		
+		return new Customer(303,"Ramesh","ram@abc.com");
 	}
 }

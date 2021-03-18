@@ -34,9 +34,15 @@ public class OrderServiceApplication {
 		  
 		  System.out.println(fridge);
 		 
-		  Order order = ctx.getBean("ramOrder",Order.class);
+		  Order order = ctx.getBean("ramOrder1",Order.class);
 		  
 		  System.out.println(order);
+		  
+		  
+Order order2 = ctx.getBean("ramOrder2",Order.class);
+		  
+		  System.out.println(order2);
+		  
 		  
 		  ctx.close();
 	
