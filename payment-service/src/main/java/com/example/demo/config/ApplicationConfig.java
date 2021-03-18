@@ -1,9 +1,11 @@
 package com.example.demo.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
+import com.example.demo.ConditionForCustomerCreation;
 import com.example.demo.model.Customer;
 
 @Configuration
@@ -30,27 +32,31 @@ public class ApplicationConfig {
 	}
 	
 	
-	@Bean
-	public Customer shyam() {
-		
-		return new Customer(102,"Shyam","shyam@abc.com");
-	}
-	
-	
-	@Bean
-	@Primary
-	public Customer manish() {
-		
-		return new Customer(103,"manish","mani@abc.com");
-	}
-	
-//	
 //	@Bean
-//	public Customer patil() {
+//	public Customer shyam() {
 //		
-//		return new Customer(104,"patil","patil@abc.com");
+//		return new Customer(102,"Shyam","shyam@abc.com");
 //	}
-//	
+	
+	
+//	@Bean
+//	@Primary
+//	public Customer manish() {
+//		
+//		return new Customer(103,"manish","mani@abc.com");
+//	}
+	
+	
+	// Event though there are two beans ram and patil , patil will not be created
+	// since the conditional return a false value
+	
+	@Bean
+	@Conditional(ConditionForCustomerCreation.class)
+	public Customer patil() {
+		
+		return new Customer(104,"patil","patil@abc.com");
+	}
+	
 //	@Bean
 //	public Customer gaurav() {
 //		
