@@ -7,3 +7,5 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:    show-sql: true
     hibernate:      naming:        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl      ddl-auto: update            
+---
+spring:  application:    name: 
