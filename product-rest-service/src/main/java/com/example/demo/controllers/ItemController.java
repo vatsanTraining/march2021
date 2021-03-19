@@ -2,6 +2,8 @@ package com.example.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +19,8 @@ import java.util.*;
 import com.example.demo.entity.*;
 @RestController
 @RequestMapping(path = "/api/v1/")
+
+@CrossOrigin(origins = "*")
 public class ItemController {
 
 	
@@ -61,10 +65,20 @@ public class ItemController {
 	}
 	
 	
+	// Refactor the code  to return response Entity with status code
+
 	
 	@PutMapping(path = "/items" , produces = "application/json")
 	public void updatePrice(){
 		
 		 this.service.updatePrice();
 	}
+	
+	// Refactor the code  to return response Entity with status code
+	@DeleteMapping(path = "/items/{id}" , produces = "application/json")
+	public void remove(@PathVariable("id") long id){
+		
+		this.service.remove(id);
+	}
+	
 }

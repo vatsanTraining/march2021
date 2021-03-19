@@ -9,7 +9,12 @@ import org.springframework.context.annotation.Bean;
 import com.example.demo.entity.Item;
 import com.example.demo.respos.ItemRepository;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
+
 @SpringBootApplication
+
+@OpenAPIDefinition(info = @Info(title = "Product Service",version = "1.0"))
 public class ProductRestServiceApplication {
 
 	public static void main(String[] args) {

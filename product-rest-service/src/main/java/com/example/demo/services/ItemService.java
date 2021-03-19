@@ -53,4 +53,9 @@ public class ItemService {
 		
 		 this.repo.updatePrice();
 	}
+	
+	public void remove(long id) {
+		
+		this.repo.deleteById(id);
+	}
 }
