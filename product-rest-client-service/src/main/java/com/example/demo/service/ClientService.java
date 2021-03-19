@@ -1,8 +1,11 @@
 package com.example.demo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+
+import com.example.demo.dto.ItemDto;
 
 @Component
 public class ClientService {
@@ -25,5 +28,13 @@ public class ClientService {
 		
 	}
 	
+	public void addItem(ItemDto item) {
+		
+		HttpEntity<ItemDto> entity = new HttpEntity<ItemDto>(item);
+		
+		ItemDto resp = template.postForObject(baseURL+"/items", entity, ItemDto.class);
+		
+		System.out.println("Added One Resource:="+resp);
+	}
 	
 }

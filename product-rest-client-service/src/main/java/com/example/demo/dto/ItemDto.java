@@ -1,6 +1,8 @@
 package com.example.demo.dto;
 
 
+import org.springframework.stereotype.Component;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +14,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 
+@Component
 public class ItemDto {
 
 		long id;
