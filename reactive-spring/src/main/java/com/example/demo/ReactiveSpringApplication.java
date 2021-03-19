@@ -21,12 +21,15 @@ public class ReactiveSpringApplication {
 	    Flux<Customer> custList = service.getAll();
 	    
 	    
-	      custList.subscribe( e -> System.out.println(e),
+	      custList.map(e -> e.getCustomerName().toUpperCase()).log().subscribe( e -> System.out.println(e),
 	    		                 error-> System.out.println(error), 
 	    		                  ()-> System.out.println("completed")
 	    		               
 	    		             );
 	
+	       service.invokeRestAPI();
+	       
+	      ctx.close();
 	}
 
 }
