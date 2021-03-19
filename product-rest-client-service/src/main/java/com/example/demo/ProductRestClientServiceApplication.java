@@ -19,7 +19,7 @@ public class ProductRestClientServiceApplication {
 	     ClientService service =
 	    		   ctx.getBean(ClientService.class);
 	     
-	     service.fetchItems();
+	    // service.fetchItems();
 	     
 	     ItemDto dto = ctx.getBean(ItemDto.class);
 	     
