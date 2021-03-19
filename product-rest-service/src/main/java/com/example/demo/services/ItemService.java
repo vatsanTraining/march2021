@@ -48,4 +48,9 @@ public class ItemService {
 		
 		return this.repo.findItemByQuntityGt(qty);
 	}
+	
+	public void updatePrice(){
+		
+		 this.repo.updatePrice();
+	}
 }
