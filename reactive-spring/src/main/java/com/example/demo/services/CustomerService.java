@@ -19,8 +19,6 @@ public class CustomerService {
 	private List<Customer> custList;
 	
 	
-	@Autowired
-	private WebClient client;
 	
 	public Flux<Customer> getAll(){
 		
@@ -35,20 +33,14 @@ public class CustomerService {
 	
     public void  invokeRestAPI() {
     	
+    	WebClient client = WebClient.create("http://localhost:8080/api/v1");
     	Flux<String> list =client.get()
-    	.uri("http://localhost:8080/api/v1/items")
+    	.uri("/items")
     	.retrieve()
     	.bodyToFlux(String.class);
     	
-    	list.subscribe(System.out::println);
+    	list.log().subscribe(System.out::println);
     	
-    	
-    	try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
     	
     }
 }
