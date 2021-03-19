@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import com.example.demo.model.Customer;
 
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @Component
 public class CustomerService {
@@ -22,5 +23,10 @@ public class CustomerService {
 		return Flux.fromIterable(custList);
 	}
 	
+	
+    public Mono<Customer> getOne(){
+		
+		return Mono.just(custList.get(0));
+	}
 	
 }
