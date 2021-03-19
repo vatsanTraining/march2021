@@ -26,6 +26,9 @@ public class Item {
 		String name;
 		int quantity;
 		double price;
+		
+		
+		
 
 	}
 

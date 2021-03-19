@@ -5,6 +5,9 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.respos.ItemRepository;
 import java.util.*;
+
+import javax.management.RuntimeErrorException;
+
 import com.example.demo.entity.*;
 @Service
 public class ItemService {
@@ -16,6 +19,8 @@ public class ItemService {
 
 	public List<Item> getAll(){
 		
+		System.out.println(repo.getClass());
+		
 		return this.repo.findAll();
 	}
 	
@@ -25,5 +30,10 @@ public class ItemService {
 		return this.repo.save(entity);
 	}
 	
+	public Item findByItemId(Long id) {
+		
+		
+		return this.repo.findById(id).orElseThrow(() -> new RuntimeException("Id Not Found"));
+	}
 	
 }

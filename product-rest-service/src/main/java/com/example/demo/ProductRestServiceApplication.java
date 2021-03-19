@@ -29,6 +29,7 @@ public class ProductRestServiceApplication {
 			public void run(String... args) throws Exception {
 				
 				
+				
 				repo.save(new Item(101,"tv",2,4500.00));
 				repo.save(new Item(102,"fridge",3,14500.00));
 				repo.save(new Item(103,"washing machine",3,24500.00));
