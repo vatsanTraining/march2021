@@ -36,4 +36,16 @@ public class ItemService {
 		return this.repo.findById(id).orElseThrow(() -> new RuntimeException("Id Not Found"));
 	}
 	
+	
+	public List<Item> findByName(String srchName){
+		
+		return this.repo.findByName(srchName);
+	}
+	
+	
+	
+	public List<Item> findQuanityGrt(int qty){
+		
+		return this.repo.findItemByQuntityGt(qty);
+	}
 }

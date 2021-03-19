@@ -36,6 +36,22 @@ public class ItemController {
 		return this.service.findByItemId(id);
 	}
 	
+	
+	@GetMapping(path = "/items/srch/name/{name}" , produces = "application/json")
+	public List<Item> find(@PathVariable("name") String name){
+		
+		return this.service.findByName(name);
+	}
+	
+	
+	@GetMapping(path = "/items/srch/qty/{qty}" , produces = "application/json")
+	public List<Item> find(@PathVariable("qty") int srchQty){
+		
+		return this.service.findQuanityGrt(srchQty);
+	}
+	
+	
+	
 	@ResponseStatus(code = HttpStatus.CREATED)
 	@PostMapping(path = "/items" , produces = "application/json",consumes = "application/json")
 	public Item addItem(@RequestBody Item item) {
