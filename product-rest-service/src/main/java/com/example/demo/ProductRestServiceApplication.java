@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import org.jasypt.encryption.StringEncryptor;
+import org.jasypt.encryption.pbe.PooledPBEStringEncryptor;
+import org.jasypt.encryption.pbe.config.SimpleStringPBEConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -8,12 +11,13 @@ import org.springframework.context.annotation.Bean;
 
 import com.example.demo.entity.Item;
 import com.example.demo.respos.ItemRepository;
+import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 
 @SpringBootApplication
-
+@EnableEncryptableProperties
 @OpenAPIDefinition(info = @Info(title = "Product Service",version = "1.0"))
 public class ProductRestServiceApplication {
 
@@ -21,6 +25,7 @@ public class ProductRestServiceApplication {
 		SpringApplication.run(ProductRestServiceApplication.class, args);
 	}
 
+	
 	
 	@Bean
 	public CommandLineRunner runner() {
