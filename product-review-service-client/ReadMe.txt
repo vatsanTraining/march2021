@@ -8,4 +8,6 @@
  Using the WebClient configure host/method/and return type and get the publisher
  
  Subscribe the Publisher and return value
-    
+ 
+ Invoke the endpoint from the Browser
+ 
