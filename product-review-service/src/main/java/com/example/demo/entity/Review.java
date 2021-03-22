@@ -20,6 +20,6 @@ public class Review {
 	private String id;
 	private String title;
 	private String description;
-	private Integer score;
+	private double score;
 	private String productId;
 }
