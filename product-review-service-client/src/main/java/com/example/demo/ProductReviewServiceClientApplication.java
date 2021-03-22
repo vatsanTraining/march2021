@@ -23,9 +23,14 @@ public class ProductReviewServiceClientApplication {
 	      Flux<CreditCard> cards = service.getCards();
 	      
 	      
+	      Flux<CreditCard> cards2 =cards.concatWith(Flux.error(new RuntimeException("Exception")));
+	      
 	         cards.log().subscribe(System.out::println);
 	         
-	         
+	         cards2.subscribe(
+	        		 System.out::println,
+	        		 e -> System.out.println(e.getMessage()),
+	        		 () -> System.out.println("Completed iteration"));
 	         
 	         Mono<CreditCard> card = service.getCardByPos(1);
 	         
