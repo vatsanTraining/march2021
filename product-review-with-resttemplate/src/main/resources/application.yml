@@ -1,0 +1,8 @@
+
+spring:
+  application:
+    name: rest-template-client
+
+
+server:
+  port: 6065
