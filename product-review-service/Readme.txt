@@ -8,4 +8,22 @@ Create a Repository by extending JPA Repository
 Create a Service and AutoWire Repository
 Create a Controller and and AutoWire Service
 
+===================================
 
+Add Config Client Module 
+
+Update the application.yml and add reference of Config Server
+
+spring
+ config:
+    import: configserver:http://localhost:8888
+
+Expose Actuator End Points also 
+
+
+Note : Before spring boot 2.4 we have bootstrap.yml and application.yml 
+       Config Server Uri should be added in bootstrap.yml 
+       But from 2.4 it has changed now there is no bootstrap.yml
+       
+       
+       
