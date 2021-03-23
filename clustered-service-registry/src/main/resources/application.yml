@@ -1,16 +1,19 @@
 spring:
-  profiles:
-    include:
-    - peer1
+  config:
+    activate:
+      on-profile:
+      - peer-1
+    
 server:
   port: 8770
   
 ---
 
 spring:
-  profiles:
-    include:
-    - peer-2
+  config:
+    activate:
+      on-profile:
+      - peer-2
 
 server:
   port: 8775
