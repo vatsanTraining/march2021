@@ -38,7 +38,7 @@ public class ClientController {
 	@GetMapping(path = "/client/v2/reviews")
 	public Mono<String> getReviewsAsMono() {
 		
-		    	return client.get().uri("lb://REVIEW-SERVICE/api/v1/reviews")
+		    	return client.get().uri("lb://REVIEW-SERVICE/api/v1/lb/reviews")
 				.retrieve()
 				.bodyToMono(String.class);
 		
