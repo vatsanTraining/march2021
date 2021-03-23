@@ -1,0 +1,14 @@
+
+spring:
+  application:
+    name: payment-history
+    
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-peer1:8770/eureka,http://eureka-peer2:8775/eureka    
+
+
+server:
+  port: 5050
