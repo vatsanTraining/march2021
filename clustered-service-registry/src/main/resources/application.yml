@@ -6,7 +6,10 @@ spring:
     
 server:
   port: 8770
-  
+
+logging:
+  level:
+    '[org.springframework.boot]': trace  
 ---
 
 spring:
@@ -14,6 +17,10 @@ spring:
     activate:
       on-profile:
       - peer-2
+
+logging:
+  level:
+    '[org.springframework.boot]': info  
 
 server:
   port: 8775
