@@ -3,7 +3,17 @@ spring:
     activate:
       on-profile:
       - peer-1
+  application:
+    name: eureka-server-clustered
     
+eureka:
+  instance:
+    hostname: eureka-peer1
+    appname: eureka-server-clustered
+  client:
+    service-url:
+       defaultZone: http://eureka-peer2:8775/eureka/
+                
 server:
   port: 8770
 
@@ -17,7 +27,13 @@ spring:
     activate:
       on-profile:
       - peer-2
-
+eureka:
+  instance:
+    hostname: eureka-peer2
+    appname: eureka-server-clustered
+  client:
+    service-url:
+      defaultZone: http://eureka-peer1:8770/eureka
 logging:
   level:
     '[org.springframework.boot]': info  
