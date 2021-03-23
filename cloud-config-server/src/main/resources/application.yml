@@ -7,5 +7,5 @@ spring:
           search-paths:          - '{application}'
           
 management:  endpoints:    web:      exposure:        include:        - "*"
-        
+logging:  level:    '[org.springframework]': debug        
  
