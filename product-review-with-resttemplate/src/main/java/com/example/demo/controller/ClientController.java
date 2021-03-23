@@ -39,4 +39,15 @@ public class ClientController {
 //				          ResponseEntity<List.class);
 //	}
 	
+	
+	@GetMapping(path = "/client/pmthistory")
+	public String getPayments(){
+		
+		
+		return this.template.getForObject("http://PAYMENT-HISTORY/payments",
+		          String.class);
+
+		
+	}
+
 }

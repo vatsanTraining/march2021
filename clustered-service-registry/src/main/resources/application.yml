@@ -12,7 +12,7 @@ eureka:
     appname: eureka-server-clustered
   client:
     service-url:
-       defaultZone: http://eureka-peer2:8775/eureka/
+       defaultZone: http://eureka-peer2:8775/eureka
                 
 server:
   port: 8770
