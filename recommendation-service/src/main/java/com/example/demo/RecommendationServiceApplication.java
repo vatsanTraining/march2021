@@ -26,7 +26,7 @@ public class RecommendationServiceApplication {
 			public void run(String... args) throws Exception {
 
 				repo.save(new Recommendation(101,"Tv","micromax","elegant design",4.2));
-				repo.save(new Recommendation(102,"Mobile","Oppo","battery lefe",4.1));
+				repo.save(new Recommendation(102,"Mobile","Oppo","battery life",4.1));
 				repo.save(new Recommendation(103,"laptop","dell","ram memory",4.3));
 				
 			}
