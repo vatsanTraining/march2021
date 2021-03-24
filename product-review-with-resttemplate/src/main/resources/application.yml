@@ -2,12 +2,31 @@
 spring:
   application:
     name: rest-template-client
+  boot:
+    admin:
+      client:
+        url:
+        - http://localhost:1010
 
 
 server:
-  port: 6065
+  port: 7075
 
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka-peer1:8770/eureka    
+      defaultZone: http://localhost:8761/eureka    
+
+
+management:
+  endpoint:
+    health:
+      show-details: always
+
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+        
+        
