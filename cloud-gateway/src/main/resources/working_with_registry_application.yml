@@ -6,15 +6,11 @@ spring:
     name: cloud-gateway
   cloud:
     gateway:
-      routes:
-      - id: review-module
-        uri: lb://REVIEW-SERVICE
-        predicates:
-        - Path =/api/v1/reviews/** 
-    
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
 
-
-        
 eureka:
   client:
     fetch-registry: true
