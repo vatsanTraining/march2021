@@ -19,8 +19,10 @@ public class CloudGatewayApplication {
 		
 		return builder.routes()
                 .route(p -> p.path("/api/v1/reviews/**")
-                .filters(f -> f.addRequestHeader("Hello", "World"))
+                .filters(f -> f.addResponseHeader("Hello", "World"))
                 .uri("lb://REVIEW-SERVICE"))
+                .route(p -> p.path("/api/v1/choices/**")
+                .uri("http://localhost:7575/"))
                 .build();
 
 		
