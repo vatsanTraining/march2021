@@ -12,13 +12,18 @@ import javax.annotation.security.RolesAllowed;
 import com.example.demo.*;
 import com.example.demo.ifaces.RecommedRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
+@Slf4j
 public class RecommendController {
 
 	private RecommedRepository repo;
 
 	public RecommendController(RecommedRepository repo) {
 		super();
+		
+		log.info("Recomend controller initalized");
 		this.repo = repo;
 	}
 	
@@ -29,6 +34,7 @@ public class RecommendController {
 		
 		List<Recommendation> list = repo.findAll();
 		
+		log.info("Get All Method is fired");
 		return ResponseEntity.status(HttpStatus.OK).body(list);
 	}
 	
