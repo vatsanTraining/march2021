@@ -7,7 +7,7 @@ spring:
    
 logging:
   level:
-    '[org.springframework.cloud.gateway]': trace
+    '[org.springframework.cloud.gateway,reactor.netty.http.client]': trace
 
         
 eureka:
