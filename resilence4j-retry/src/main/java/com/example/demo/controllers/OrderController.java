@@ -29,8 +29,8 @@ public class OrderController {
     @ResponseStatus(HttpStatus.OK)
     @Retry(name=ORDER_SERVICE, fallbackMethod = "orderFallback")
     public ResponseEntity<String> createOrder(){
-    	System.out.println("Attempted :"+ attempts++);
-        String response = restTemplate.getForObject("http://localhost:8081/item", String.class);
+    	log.info("Attempted :"+ attempts++);
+    	  String response = restTemplate.getForObject("http://localhost:8081/item", String.class);
         return new ResponseEntity<String>(response, HttpStatus.OK);
     }
     
@@ -38,6 +38,7 @@ public class OrderController {
     public ResponseEntity<String> orderFallback(Exception e){
     	log.info(e.getMessage());
     	attempts =1;
+    
         return new ResponseEntity<String>("Item service is down", HttpStatus.OK);
 
     }

@@ -7,3 +7,6 @@ resilience4j.retry:
       maxAttempts: 3
       waitDuration: 10000
 
+spring:
+  application:
+    name: order-service
