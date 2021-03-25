@@ -1,0 +1,9 @@
+server:
+  port: 3535
+
+resilience4j.retry:
+  instances:
+    orderService:
+      maxAttempts: 3
+      waitDuration: 10000
+
