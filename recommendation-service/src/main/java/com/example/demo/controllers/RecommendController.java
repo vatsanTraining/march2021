@@ -6,6 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
+
+import javax.annotation.security.RolesAllowed;
+
 import com.example.demo.*;
 import com.example.demo.ifaces.RecommedRepository;
 
