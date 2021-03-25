@@ -13,9 +13,12 @@ public class MyGlobalPreFilter implements GlobalFilter {
 
 	@Override
 	public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+
 		String requestPath = exchange.getRequest().getPath().toString();
-        System.out.println("Request path = " + requestPath);
-        HttpHeaders headers = exchange.getRequest().getHeaders();
+        
+		System.out.println("Request path = " + requestPath);
+        
+		HttpHeaders headers = exchange.getRequest().getHeaders();
         Set<String> headerNames = headers.keySet();
  
         headerNames.forEach((header) -> {

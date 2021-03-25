@@ -1,6 +1,8 @@
 package com.example.demo.controllers;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
+@Slf4j
 public class OrderController {
 
 	
@@ -29,6 +32,7 @@ public class OrderController {
     
     
     public ResponseEntity<String> orderFallback(Exception e){
+    	log.info(e.getMessage());
         return new ResponseEntity<String>("Item service is down", HttpStatus.OK);
 
     }
